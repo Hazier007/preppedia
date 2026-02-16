@@ -9,4 +9,10 @@ export type Item = {
   title: string;
   brand: string;
   categorySlug: string;
+  description: string;
+  price: string;
+  rating: number;
+  amazonUrl: string;
+  imageUrl: string;
+  features: string[];
 };
