@@ -18,7 +18,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-32">
           <div className="text-center">
             <h1 className="text-5xl font-bold tracking-tight text-foreground lg:text-7xl">
-              <span className="text-accent">Prepper</span>edia
+              <span className="text-accent">Prepp</span>edia
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-muted lg:text-2xl">
               The ultimate guide to survival gear and emergency preparedness. 

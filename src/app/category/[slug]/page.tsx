@@ -28,8 +28,9 @@ const StarRating = ({ rating }: { rating: number }) => {
   );
 };
 
-export default function CategoryPage({ params }: { params: Params }) {
-  const category = getCategory(params.slug);
+export default async function CategoryPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const category = getCategory(slug);
   if (!category) return notFound();
 
   const items = getItemsByCategory(category.slug);

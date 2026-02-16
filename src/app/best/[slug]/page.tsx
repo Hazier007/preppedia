@@ -44,8 +44,9 @@ const ComparisonHighlight = ({ title, winner, items }: {
   </div>
 );
 
-export default function BestPage({ params }: { params: Params }) {
-  const category = getCategory(params.slug);
+export default async function BestPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const category = getCategory(slug);
   if (!category) return notFound();
 
   const allItems = getItemsByCategory(category.slug);
