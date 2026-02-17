@@ -15,7 +15,7 @@ export default function Home() {
       {/* Hero Section */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent"></div>
-        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="text-center">
             <h1 className="text-5xl font-bold tracking-tight text-foreground lg:text-7xl">
               <span className="text-accent">Prepp</span>edia
@@ -43,7 +43,7 @@ export default function Home() {
       </header>
 
       {/* Categories Section */}
-      <main className="mx-auto max-w-7xl px-6 py-20" id="categories">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20" id="categories">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-foreground lg:text-4xl">
             Essential Survival Categories
@@ -53,7 +53,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
           {CATEGORIES.map((category) => (
             <Link
               key={category.slug}
@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* Why Trust Preppedia Section */}
       <section className="bg-card/20 border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground lg:text-4xl">
               Why Trust Preppedia?
@@ -99,7 +99,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
             <div className="space-y-8">
               <div className="bg-card border border-border rounded-2xl p-8">
                 <h3 className="text-xl font-bold text-foreground mb-4">🔬 Rigorous Testing Protocol</h3>
@@ -137,7 +137,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-4xl px-6 py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground lg:text-4xl">
               Prepping & Survival Gear FAQ
@@ -207,7 +207,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="bg-card/30 border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-foreground lg:text-3xl">
               Stay Prepared, Stay Safe
@@ -222,8 +222,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 py-12">
-          <div className="grid gap-8 lg:grid-cols-4">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-2">
               <h3 className="text-2xl font-bold text-accent">Preppedia</h3>
               <p className="mt-4 text-muted max-w-md">
@@ -264,7 +264,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="mt-12 pt-8 border-t border-border flex flex-col lg:flex-row justify-between items-center gap-4">
+          <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
             <p className="text-sm text-muted">
               As an Amazon Associate I earn from qualifying purchases.
             </p>
