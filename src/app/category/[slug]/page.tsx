@@ -149,6 +149,112 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
               ))}
             </div>
 
+            {/* Comparison Table */}
+            <div className="mt-16">
+              <h2 className="text-2xl font-bold text-foreground mb-8">
+                {category.name} Comparison Table
+              </h2>
+              <div className="overflow-x-auto bg-card border border-border rounded-2xl">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left p-4 font-semibold text-foreground">Product</th>
+                      <th className="text-left p-4 font-semibold text-foreground">Price</th>
+                      <th className="text-left p-4 font-semibold text-foreground">Rating</th>
+                      <th className="text-left p-4 font-semibold text-foreground">Best For</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {items.map((item, index) => (
+                      <tr key={item.slug} className={index % 2 === 0 ? 'bg-background/50' : ''}>
+                        <td className="p-4">
+                          <Link href={`/item/${item.slug}`} className="font-medium text-foreground hover:text-accent transition-colors">
+                            {item.title}
+                          </Link>
+                        </td>
+                        <td className="p-4 text-accent font-semibold">{item.price}</td>
+                        <td className="p-4">
+                          <StarRating rating={item.rating} />
+                        </td>
+                        <td className="p-4 text-muted">
+                          {item.categorySlug === 'water-filtration' && (
+                            index === 0 ? 'Best Overall' :
+                            index === 1 ? 'Budget Choice' :
+                            index === 2 ? 'Fastest Flow' :
+                            index === 3 ? 'All-in-One Solution' :
+                            index === 4 ? 'Military Grade' : 'Bulk Storage'
+                          )}
+                          {item.categorySlug === 'first-aid' && (
+                            index === 0 ? 'Comprehensive Coverage' :
+                            index === 1 ? 'Tactical/Military' :
+                            index === 2 ? 'Trauma Control' :
+                            index === 3 ? 'Fracture Support' : 'Bleeding Control'
+                          )}
+                          {item.categorySlug === 'food-storage' && (
+                            index === 0 ? 'Freeze-Dried Quality' :
+                            index === 1 ? 'Long-Term Value' :
+                            index === 2 ? 'Family Planning' :
+                            index === 3 ? 'Bulk Storage' :
+                            index === 4 ? 'DIY Storage' : 'Nutritional Variety'
+                          )}
+                          {item.categorySlug === 'emergency-radio' && (
+                            index === 0 ? 'Most Versatile' :
+                            index === 1 ? 'Premium Features' :
+                            index === 2 ? 'Compact Design' :
+                            index === 3 ? 'Best Reception' : 'Home Base Station'
+                          )}
+                          {item.categorySlug === 'flashlights' && (
+                            index === 0 ? 'EDC Champion' :
+                            index === 1 ? 'High Performance' :
+                            index === 2 ? 'Tactical Premium' :
+                            index === 3 ? 'Best Value' :
+                            index === 4 ? 'American Classic' : 'Dual Power'
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Buyer's Guide */}
+            <div className="mt-16">
+              <h2 className="text-2xl font-bold text-foreground mb-8">
+                {category.name} Buyer's Guide
+              </h2>
+              <div className="bg-card border border-border rounded-2xl p-8">
+                <div className="prose prose-invert max-w-none">
+                  {category.buyersGuide.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="text-muted leading-relaxed mb-4">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="mt-16">
+              <h2 className="text-2xl font-bold text-foreground mb-8">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-4">
+                {category.faq.map((faqItem, index) => (
+                  <details key={index} className="bg-card border border-border rounded-lg">
+                    <summary className="p-6 font-semibold text-foreground cursor-pointer hover:text-accent transition-colors">
+                      {faqItem.question}
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-muted leading-relaxed">
+                        {faqItem.answer}
+                      </p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+
             {/* Best of CTA */}
             <div className="mt-16 bg-card/50 border border-border rounded-2xl p-8 text-center">
               <h3 className="text-2xl font-bold text-foreground mb-4">
