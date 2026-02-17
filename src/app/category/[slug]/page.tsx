@@ -139,12 +139,10 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
                     </div>
                     
                     <a
-                      href={item.amazonUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={"/item/" + item.slug}
                       className="block w-full bg-accent text-background text-center py-3 rounded-lg font-semibold hover:bg-accent-dark transition-colors"
                     >
-                      View on Amazon
+                      Read full review
                     </a>
                   </div>
                 </article>

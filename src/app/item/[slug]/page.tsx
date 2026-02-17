@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ITEMS } from "@/data/items";
 import { CATEGORIES } from "@/data/categories";
-import { itemAmazonUrl } from "@/lib/amazon";
 
 type Params = { slug: string };
 
@@ -17,51 +17,98 @@ export default function ItemPage({ params }: { params: Params }) {
   const category = CATEGORIES.find((c) => c.slug === item.categorySlug);
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-12">
-      <p className="text-sm text-zinc-500">
-        <Link href="/" className="hover:text-zinc-700">
-          Home
-        </Link>
-        <span className="px-2">/</span>
-        <Link href={`/category/${item.categorySlug}`} className="hover:text-zinc-700">
-          {category?.name ?? "Category"}
-        </Link>
-        <span className="px-2">/</span>
-        <span className="text-zinc-700">Item</span>
-      </p>
+    <div className="min-h-screen bg-background">
+      <header className="border-b border-border">
+        <div className="mx-auto max-w-5xl px-6 py-8">
+          <nav className="text-sm text-muted mb-4">
+            <Link href="/" className="hover:text-accent transition-colors">
+              Home
+            </Link>
+            <span className="mx-2">/</span>
+            <Link
+              href={`/category/${item.categorySlug}`}
+              className="hover:text-accent transition-colors"
+            >
+              {category?.name ?? "Category"}
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-foreground">{item.title}</span>
+          </nav>
 
-      <h1 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-900">
-        {item.title}
-        <span className="ml-2 text-base font-medium text-zinc-500">({item.brand})</span>
-      </h1>
-
-      <section className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-zinc-900">Quick take</h2>
-        <p className="mt-2 text-zinc-600">
-          MVP content. Next: 300–500 word review, pros/cons, specs and alternatives.
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={itemAmazonUrl(item)}
-            target="_blank"
-            rel="nofollow sponsored noopener"
-            className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-zinc-800"
-          >
-            Check price on Amazon
-          </a>
-          <Link
-            href={`/category/${item.categorySlug}`}
-            className="rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 hover:bg-zinc-50"
-          >
-            Back to category
-          </Link>
+          <h1 className="text-4xl font-bold text-foreground lg:text-5xl">
+            {item.title}
+          </h1>
+          <p className="mt-3 text-muted">Brand: {item.brand}</p>
         </div>
+      </header>
 
-        <p className="mt-3 text-xs text-zinc-500">
-          Affiliate disclosure: outbound links may be affiliate links (tag: {"preppedia-20"}).
-        </p>
-      </section>
-    </main>
+      <main className="mx-auto max-w-5xl px-6 py-12">
+        <div className="grid gap-10 lg:grid-cols-[420px_1fr]">
+          <div className="bg-card border border-border rounded-2xl p-6">
+            <div className="aspect-square relative bg-background rounded-xl overflow-hidden">
+              <Image
+                src={item.imageUrl}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 420px"
+              />
+            </div>
+
+            <div className="mt-6 flex items-center justify-between">
+              <span className="text-2xl font-bold text-accent">{item.price}</span>
+              <span className="text-sm text-muted">Rating: {item.rating}</span>
+            </div>
+
+            <a
+              href={item.amazonUrl}
+              target="_blank"
+              rel="nofollow sponsored noopener"
+              className="mt-6 block w-full bg-accent text-background text-center py-3 rounded-lg font-semibold hover:bg-accent-dark transition-colors"
+            >
+              Check price on Amazon
+            </a>
+
+            <p className="mt-3 text-xs text-muted">
+              Disclosure: as an Amazon Associate we may earn from qualifying purchases.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            <section className="bg-card border border-border rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-foreground">Overview</h2>
+              <p className="mt-4 text-muted leading-relaxed">{item.description}</p>
+            </section>
+
+            <section className="bg-card border border-border rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-foreground">Key features</h2>
+              <ul className="mt-4 space-y-2 text-muted">
+                {item.features.map((f, idx) => (
+                  <li key={idx} className="flex gap-3">
+                    <span className="text-accent">✓</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="bg-card/50 border border-border rounded-2xl p-8">
+              <h2 className="text-xl font-bold text-foreground">Next (MVP+)</h2>
+              <p className="mt-3 text-muted">
+                Add a 300–500 word review (real pros/cons, who it’s for, and alternatives).
+              </p>
+              <div className="mt-6">
+                <Link
+                  href={`/category/${item.categorySlug}`}
+                  className="text-accent font-semibold hover:underline"
+                >
+                  ← Back to {category?.name ?? "category"}
+                </Link>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }
