@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CATEGORIES } from "@/data/categories";
+import { GUIDES } from "@/data/guides";
 
 const icons: Record<string, string> = {
   "water-filtration": "💧",
@@ -113,6 +114,50 @@ export default function Home() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Buyer's Guides ── */}
+      <section id="buyer-guides" className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold lg:text-4xl">Expert Buyer's Guides</h2>
+            <p className="mt-4 text-muted text-lg">
+              In-depth reviews and recommendations from our testing team. 1000+ words of expert analysis for every category.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {GUIDES.map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/guide/${guide.slug}`}
+                className="group relative flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-200 hover:border-accent/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5"
+              >
+                <div className="mb-4 inline-block rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
+                  📚 {guide.category}
+                </div>
+                <h3 className="text-xl font-bold group-hover:text-accent transition-colors mb-3">
+                  {guide.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted mb-4">
+                  {guide.description}
+                </p>
+                <div className="mt-auto flex items-center justify-between pt-4 text-xs text-muted">
+                  <span>{guide.readTime}</span>
+                  <span className="inline-flex items-center text-sm font-semibold text-accent group-hover:translate-x-1 transition-transform">
+                    Read Guide →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted mb-6">
+              ✅ Field-tested recommendations • 🎯 Unbiased reviews • 🔬 Professional analysis
+            </p>
           </div>
         </div>
       </section>

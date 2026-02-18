@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CATEGORIES } from "@/data/categories";
 import { ITEMS } from "@/data/items";
+import { GUIDES } from "@/data/guides";
 
 const BASE = "https://preppedia.vercel.app";
 
@@ -32,5 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...categoryPages, ...bestPages, ...itemPages];
+  const guidePages: MetadataRoute.Sitemap = GUIDES.map((g) => ({
+    url: `${BASE}/guide/${g.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
+
+  return [...staticPages, ...categoryPages, ...bestPages, ...itemPages, ...guidePages];
 }

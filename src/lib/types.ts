@@ -26,3 +26,12 @@ export type Item = {
   bestFor: string; // "Best for backpackers", "Best budget option", etc.
   verdict: string; // 2-3 sentence final verdict
 };
+
+export type Guide = {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  publishDate: string;
+  readTime: string;
+};
