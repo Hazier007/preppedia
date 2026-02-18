@@ -96,4 +96,74 @@ export const CATEGORIES: Category[] = [
       { question: "How often should I test and maintain my emergency flashlights?", answer: "Test monthly, checking operation and brightness. Replace or recharge batteries every 6 months, or immediately after use. Clean battery contacts quarterly to prevent corrosion. Store lights with batteries removed for long-term storage to prevent damage from leaking batteries." }
     ]
   },
+  {
+    slug: "backup-power",
+    name: "Backup Power",
+    intro:
+      "When the grid goes down, watts become currency. Power banks, solar panels and generators that keep your essentials alive.",
+    buyersGuide: `Backup power is about realistic loads and redundancy. Start by listing the devices you must keep running (phone, radio, headlamp, medical devices) and the ones you want to run (laptop, small fridge). Your best results come from a layered setup: small power banks for everyday carry, a larger portable power station for home, and solar for recharging when outages last longer than your stored capacity.\n\nThe key spec is watt-hours (Wh). A 10,000 mAh power bank is roughly 37 Wh, while common power stations range from 250–2000 Wh. Don’t buy on peak watts alone: check continuous output, inverter type (pure sine is safer for sensitive electronics), and recharge speed.\n\nFor batteries, LiFePO4 usually wins for preparedness: longer cycle life, better thermal stability, and safer chemistry. NMC units can be lighter but typically wear out sooner. For solar, prioritize real-world input, cable compatibility, and MPPT controllers.\n\nKeep it simple: if your system needs five adapters and a spreadsheet to work, you won’t use it under stress.`,
+    faq: [
+      { question: "How many watt-hours do I need?", answer: "Start with 100–300 Wh for phones, lights, and a radio. 500–1000 Wh covers longer outages and more devices. If you want to run a fridge intermittently, plan 1000+ Wh and solar or generator support." },
+      { question: "Is LiFePO4 better than lithium-ion?", answer: "For preparedness, usually yes: longer lifespan, safer chemistry, and better performance over many cycles. It can be slightly heavier for the same capacity." },
+      { question: "Do I need a pure sine inverter?", answer: "Recommended if you’ll power laptops, medical devices, or sensitive chargers. For basic USB charging, it matters less." },
+      { question: "Can a power station run a fridge?", answer: "Often yes, but only for limited time. Check fridge average watts, startup surge, and your battery Wh. Add solar for multi-day reliability." },
+      { question: "What’s the simplest backup setup?", answer: "One quality 20,000 mAh power bank + one headlamp + one emergency radio. Then add a 500–1000 Wh LiFePO4 power station when budget allows." },
+    ]
+  },
+  {
+    slug: "shelter-sleep",
+    name: "Shelter & Sleep",
+    intro:
+      "Your body is the engine. Stay dry, warm, and rested with shelters and sleep systems built for bad weather and long nights.",
+    buyersGuide: `The best shelter setup is boring and reliable: protection from wind and rain, insulation from the ground, and a sleep system that matches your climate. In emergencies, hypothermia is a bigger risk than people think — even in mild weather.\n\nFor mobility, a tarp + bivy + pad is lightweight and flexible. For families or basecamp, a 3-season tent and warm sleeping bags are simpler. Prioritize water resistance, seam quality, and realistic temperature ratings (comfort ratings matter more than “survival” ratings).\n\nDon’t forget the ground: a good pad is as important as the bag.`,
+    faq: [
+      { question: "What’s the most versatile shelter?", answer: "A quality tarp plus cordage: it can become an A-frame, lean-to, rain fly, or gear cover." },
+      { question: "Do I need a bivy?", answer: "Not required, but great for wind/rain protection and adds warmth in minimalist setups." },
+      { question: "Why is a sleeping pad so important?", answer: "Ground conduction steals heat fast. A pad with decent R-value can be the difference between sleeping and shivering." },
+      { question: "What temperature rating should I buy?", answer: "Aim for a comfort rating slightly below your worst-case nights. Ratings are often optimistic." },
+      { question: "Tent vs tarp for prepping?", answer: "Tents are easy and comfy; tarps are lighter and more flexible. Many people run both: tent at home, tarp in the bag." },
+    ]
+  },
+  {
+    slug: "fire-starting",
+    name: "Fire Starting",
+    intro:
+      "Fire is heat, light, morale, and water safety. Build redundancy: lighter, ferro rod, tinder, and a stove plan.",
+    buyersGuide: `Fire starting is a system, not a single tool. Your primary should be fast and idiot-proof (reliable lighter or stormproof matches). Your backup should work when wet or cold (ferro rod). Your third layer is tinder and fuel prep (cotton + wax, tinder tabs, dry kindling).\n\nFor preparedness, add a small stove and fuel as a no-drama cooking option when open fires aren’t possible or safe.`,
+    faq: [
+      { question: "What’s the best primary fire starter?", answer: "A quality butane lighter plus a backup Bic-style lighter in a dry bag." },
+      { question: "Is a ferro rod worth it?", answer: "Yes as redundancy. It works when wet and lasts a long time, but needs practice." },
+      { question: "What tinder should I carry?", answer: "Waxed cotton balls, tinder tabs, or resin-rich fatwood shavings." },
+      { question: "Do I need a stove?", answer: "Strongly recommended. It’s safer, faster, and works in places where open fires are restricted." },
+      { question: "How do I practice?", answer: "Do 5-minute drills: one-light fire, wet conditions, and ferro rod sparks into tinder." },
+    ]
+  },
+  {
+    slug: "knives-multitools",
+    name: "Knives & Multitools",
+    intro:
+      "Cutting tools should be practical: opening, slicing, repairs, and safe handling — not fantasy specs.",
+    buyersGuide: `For preparedness, a good multitool often beats a big knife. You’ll use pliers, drivers and scissors constantly. If you add a fixed blade, choose a simple full-tang knife with a comfortable handle and easy sharpening.\n\nSteel type matters less than heat treat and geometry. For most people: choose reputable brands, avoid gimmicks, and keep a basic sharpening kit in your gear.`,
+    faq: [
+      { question: "Multitool or fixed blade first?", answer: "Multitool first for repairs and daily utility. Add a fixed blade if you do wood processing or heavy field work." },
+      { question: "What blade length is practical?", answer: "3–4 inches covers most tasks and stays controllable." },
+      { question: "Do I need a serrated edge?", answer: "Optional. Great for rope and webbing, but harder to sharpen. Many people prefer a plain edge." },
+      { question: "What’s a simple sharpening setup?", answer: "A small diamond stone + strop (or a basic pull-through for emergencies)." },
+      { question: "Are cheap knives ok?", answer: "Some are fine, but reliability matters. A tool that fails under stress isn’t a bargain." },
+    ]
+  },
+  {
+    slug: "navigation",
+    name: "Navigation",
+    intro:
+      "When GPS and phones fail, you still need to get home. Compasses, maps and GPS units that hold up.",
+    buyersGuide: `Navigation redundancy is key: offline maps on your phone, a paper map for your area, and a quality compass you know how to use. GPS handhelds can be great, but only if you’ve practiced and you can power them.\n\nFocus on map availability, battery strategy, and simple skills: orienting a map, taking a bearing, and maintaining situational awareness.`,
+    faq: [
+      { question: "Do I still need a compass if I have GPS?", answer: "Yes. GPS can fail, batteries die, and signals can be blocked. A compass is lightweight redundancy." },
+      { question: "What maps should I keep?", answer: "Local road maps + regional topo maps if you hike or travel off-road." },
+      { question: "Phone apps or handheld GPS?", answer: "Both. Phones are great with offline maps; handheld GPS often has better antennas and ruggedness." },
+      { question: "What’s the #1 navigation skill?", answer: "Knowing where you are and where you’re going — and checking often, not just when lost." },
+      { question: "How do I power navigation gear?", answer: "Lithium AAs, power banks, and a small solar panel for longer outages." },
+    ]
+  },
 ];

@@ -8,6 +8,11 @@ const icons: Record<string, string> = {
   "food-storage": "🥫",
   "emergency-radio": "📻",
   "flashlights": "🔦",
+  "backup-power": "🔋",
+  "shelter-sleep": "⛺",
+  "fire-starting": "🔥",
+  "knives-multitools": "🗡️",
+  navigation: "🧭",
 };
 
 const extraDesc: Record<string, string> = {
@@ -21,6 +26,16 @@ const extraDesc: Record<string, string> = {
     "Multi-powered communication devices. NOAA weather alerts and emergency broadcasts when conventional systems fail.",
   flashlights:
     "Reliable illumination for any situation. Tactical-grade lights tested for durability, brightness, and extended runtime.",
+  "backup-power":
+    "Power banks, solar, and generators — reliable watts when the grid is out.",
+  "shelter-sleep":
+    "Stay warm and dry: tents, tarps, bivvies, and sleeping systems that work.",
+  "fire-starting":
+    "Redundant ignition: ferro rods, lighters, tinder and stoves for all-weather heat.",
+  "knives-multitools":
+    "Field-ready blades and multitools — utility first, mall-ninja last.",
+  navigation:
+    "Maps, compasses and GPS — keep your bearings when phones fail.",
 };
 
 const faqs = [
@@ -177,13 +192,13 @@ export default function Home() {
                 href={`/category/${cat.slug}`}
                 className="group relative flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-200 hover:border-accent/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5"
               >
-                <span className="text-4xl">{icons[cat.slug]}</span>
+                <span className="text-4xl">{icons[cat.slug] ?? "🧰"}</span>
                 <h3 className="mt-4 text-xl font-bold group-hover:text-accent transition-colors">
                   {cat.name}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{cat.intro}</p>
                 <p className="mt-3 text-xs leading-relaxed text-muted/70">
-                  {extraDesc[cat.slug]}
+                  {extraDesc[cat.slug] ?? "Curated picks, specs that matter, and practical guidance."}
                 </p>
                 <span className="mt-auto pt-6 inline-flex items-center text-sm font-semibold text-accent">
                   Explore Category
