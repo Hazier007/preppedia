@@ -10,8 +10,9 @@ export function generateStaticParams(): Params[] {
   return ITEMS.map((i) => ({ slug: i.slug }));
 }
 
-export default function ItemPage({ params }: { params: Params }) {
-  const item = ITEMS.find((i) => i.slug === params.slug);
+export default async function ItemPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const item = ITEMS.find((i) => i.slug === slug);
   if (!item) return notFound();
 
   const category = CATEGORIES.find((c) => c.slug === item.categorySlug);
