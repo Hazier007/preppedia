@@ -40,3 +40,58 @@ body {
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 ::selection { background: var(--accent); color: var(--background); }
+
+/* Subtle animated aurora background (SEO-safe, CSS-only).
+   Respects prefers-reduced-motion. */
+@keyframes aurora-shift {
+  0% { transform: translate3d(-10%, -10%, 0) scale(1.05) rotate(0deg); }
+  50% { transform: translate3d(10%, 8%, 0) scale(1.12) rotate(8deg); }
+  100% { transform: translate3d(-10%, -10%, 0) scale(1.05) rotate(0deg); }
+}
+
+.aurora {
+  position: absolute;
+  inset: -40% -20% -30% -20%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+  opacity: 0.55;
+}
+
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(closest-side at 25% 30%, color-mix(in oklab, var(--accent) 65%, transparent) 0%, transparent 55%),
+    radial-gradient(closest-side at 70% 35%, rgba(59, 130, 246, 0.22) 0%, transparent 60%),
+    radial-gradient(closest-side at 55% 70%, rgba(168, 85, 247, 0.18) 0%, transparent 60%);
+  animation: aurora-shift 16s ease-in-out infinite;
+}
+
+.aurora::after {
+  opacity: 0.6;
+  animation-duration: 22s;
+  animation-direction: reverse;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(closest-side at 50% 35%, black 0%, transparent 70%);
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora::before,
+  .aurora::after {
+    animation: none;
+  }
+}
