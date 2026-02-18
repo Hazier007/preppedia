@@ -1,0 +1,80 @@
+{
+  "country": "BE",
+  "name": "Belgium mileage allowance (kmvergoeding) - headline rates",
+  "currency": "EUR",
+  "generatedAt": "2026-02-18T05:51:56.689Z",
+  "rateType": "per_kilometer",
+  "notes": "Headline annual rates as presented on kmvergoeding.be. Real-world applicability can depend on employer policy and fiscal rules; treat as a reference dataset for calculators.",
+  "rates": [
+    {
+      "mode": "car",
+      "effectiveFrom": "2022-01-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 0.417,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "car",
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-12-31",
+      "rate": 0.4259,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "car",
+      "effectiveFrom": "2024-01-01",
+      "effectiveTo": "2024-12-31",
+      "rate": 0.4269,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "bike",
+      "effectiveFrom": "2022-01-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 0.25,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "bike",
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-12-31",
+      "rate": 0.27,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "bike",
+      "effectiveFrom": "2024-01-01",
+      "effectiveTo": "2024-12-31",
+      "rate": 0.35,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "speed_pedelec",
+      "effectiveFrom": "2022-01-01",
+      "effectiveTo": "2022-12-31",
+      "rate": 0.25,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "speed_pedelec",
+      "effectiveFrom": "2023-01-01",
+      "effectiveTo": "2023-12-31",
+      "rate": 0.27,
+      "source": "kmvergoeding.be"
+    },
+    {
+      "mode": "speed_pedelec",
+      "effectiveFrom": "2024-01-01",
+      "effectiveTo": "2024-12-31",
+      "rate": 0.35,
+      "source": "kmvergoeding.be"
+    }
+  ],
+  "changelog": [
+    {
+      "effectiveFrom": "2026-02-18",
+      "change": "Created bundle file from kmvergoeding.be headline table (2022-2024).",
+      "source": "kmvergoeding.be"
+    }
+  ]
+}

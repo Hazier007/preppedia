@@ -1,0 +1,44 @@
+{
+  "country": "BE",
+  "tax": "VAT",
+  "name": "Belgium VAT rates (standard reduced)",
+  "generatedAt": "2026-02-18T05:51:56.689Z",
+  "rates": [
+    {
+      "rate": 0,
+      "label": "0%",
+      "type": "zero",
+      "effectiveFrom": "1971-01-01",
+      "notes": "Used for specific supplies (e.g. certain exports/intra-community supplies) under Belgian/EU VAT rules."
+    },
+    {
+      "rate": 6,
+      "label": "6%",
+      "type": "reduced",
+      "effectiveFrom": "1971-01-01",
+      "notes": "Reduced rate for basic needs and some services (e.g. food, water, medicines, books, passenger transport, renovation >10 years). Exact eligibility depends on legislation."
+    },
+    {
+      "rate": 12,
+      "label": "12%",
+      "type": "reduced",
+      "effectiveFrom": "1971-01-01",
+      "notes": "Reduced/intermediate rate for limited categories (e.g. restaurant/catering excluding drinks, social housing, certain agricultural products, pay TV)."
+    },
+    {
+      "rate": 21,
+      "label": "21%",
+      "type": "standard",
+      "effectiveFrom": "1971-01-01",
+      "notes": "Standard VAT rate in Belgium."
+    }
+  ],
+  "changelog": [
+    {
+      "effectiveFrom": "2026-02-18",
+      "change": "Bundled canonical rate list (0/6/12/21) with effectiveFrom placeholders for legacy introduction dates.",
+      "source": "btw-calculator.be (site content)"
+    }
+  ],
+  "disclaimer": "This dataset is intended for calculators and general guidance. Always verify special regimes, exemptions, and sector-specific rules."
+}

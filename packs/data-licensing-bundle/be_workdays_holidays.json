@@ -1,0 +1,659 @@
+{
+  "country": "BE",
+  "currency": "EUR",
+  "name": "Belgium workdays + public holidays",
+  "sourceHint": "Derived from common Belgian statutory holiday list + computed movable feasts (Easter-based).",
+  "generatedAt": "2026-02-18T05:51:56.688Z",
+  "rules": {
+    "weekendDays": [
+      "SATURDAY",
+      "SUNDAY"
+    ],
+    "businessDays": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+    ],
+    "compensatoryHolidayRule": "If a statutory holiday falls on a weekend, employees typically receive a compensatory day off. Exact date depends on employer/sector agreements.",
+    "note": "This file provides a statutory base list; sector/company-specific holidays are not included."
+  },
+  "statutoryHolidays": {
+    "fixed": [
+      {
+        "key": "new_year",
+        "month": 1,
+        "day": 1,
+        "name_nl": "Nieuwjaar"
+      },
+      {
+        "key": "labour_day",
+        "month": 5,
+        "day": 1,
+        "name_nl": "Dag van de Arbeid"
+      },
+      {
+        "key": "national_day",
+        "month": 7,
+        "day": 21,
+        "name_nl": "Nationale Feestdag"
+      },
+      {
+        "key": "assumption",
+        "month": 8,
+        "day": 15,
+        "name_nl": "O.L.V. Hemelvaart"
+      },
+      {
+        "key": "all_saints",
+        "month": 11,
+        "day": 1,
+        "name_nl": "Allerheiligen"
+      },
+      {
+        "key": "armistice",
+        "month": 11,
+        "day": 11,
+        "name_nl": "Wapenstilstand"
+      },
+      {
+        "key": "christmas",
+        "month": 12,
+        "day": 25,
+        "name_nl": "Kerstmis"
+      }
+    ],
+    "movable": [
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "rule": "Easter Sunday + 1 day"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "rule": "Easter Sunday + 39 days (Thursday)"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "rule": "Easter Sunday + 50 days"
+      }
+    ]
+  },
+  "years": {
+    "2024": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2024-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2024-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2024-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2024-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2024-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2024-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2024-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2024-04-01"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2024-05-09"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2024-05-20"
+      }
+    ],
+    "2025": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2025-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2025-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2025-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2025-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2025-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2025-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2025-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2025-04-21"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2025-05-29"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2025-06-09"
+      }
+    ],
+    "2026": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2026-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2026-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2026-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2026-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2026-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2026-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2026-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2026-04-06"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2026-05-14"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2026-05-25"
+      }
+    ],
+    "2027": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2027-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2027-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2027-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2027-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2027-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2027-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2027-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2027-03-29"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2027-05-06"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2027-05-17"
+      }
+    ],
+    "2028": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2028-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2028-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2028-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2028-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2028-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2028-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2028-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2028-04-17"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2028-05-25"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2028-06-05"
+      }
+    ],
+    "2029": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2029-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2029-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2029-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2029-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2029-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2029-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2029-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2029-04-02"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2029-05-10"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2029-05-21"
+      }
+    ],
+    "2030": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2030-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2030-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2030-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2030-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2030-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2030-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2030-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2030-04-22"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2030-05-30"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2030-06-10"
+      }
+    ],
+    "2031": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2031-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2031-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2031-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2031-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2031-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2031-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2031-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2031-04-14"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2031-05-22"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2031-06-02"
+      }
+    ],
+    "2032": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2032-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2032-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2032-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2032-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2032-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2032-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2032-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2032-03-29"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2032-05-06"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2032-05-17"
+      }
+    ],
+    "2033": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2033-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2033-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2033-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2033-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2033-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2033-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2033-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2033-04-18"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2033-05-26"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2033-06-06"
+      }
+    ],
+    "2034": [
+      {
+        "key": "new_year",
+        "name_nl": "Nieuwjaar",
+        "date": "2034-01-01"
+      },
+      {
+        "key": "labour_day",
+        "name_nl": "Dag van de Arbeid",
+        "date": "2034-05-01"
+      },
+      {
+        "key": "national_day",
+        "name_nl": "Nationale Feestdag",
+        "date": "2034-07-21"
+      },
+      {
+        "key": "assumption",
+        "name_nl": "O.L.V. Hemelvaart",
+        "date": "2034-08-15"
+      },
+      {
+        "key": "all_saints",
+        "name_nl": "Allerheiligen",
+        "date": "2034-11-01"
+      },
+      {
+        "key": "armistice",
+        "name_nl": "Wapenstilstand",
+        "date": "2034-11-11"
+      },
+      {
+        "key": "christmas",
+        "name_nl": "Kerstmis",
+        "date": "2034-12-25"
+      },
+      {
+        "key": "easter_monday",
+        "name_nl": "Paasmaandag",
+        "date": "2034-04-10"
+      },
+      {
+        "key": "ascension",
+        "name_nl": "O.L.H. Hemelvaart",
+        "date": "2034-05-18"
+      },
+      {
+        "key": "whit_monday",
+        "name_nl": "Pinkstermaandag",
+        "date": "2034-05-29"
+      }
+    ]
+  }
+}
