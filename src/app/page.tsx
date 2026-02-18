@@ -41,42 +41,121 @@ export default function Home() {
     <div className="min-h-screen">
       {/* ── Hero ── */}
       <section className="relative isolate overflow-hidden">
-        {/* gradient blobs */}
-        <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="pointer-events-none absolute top-20 right-0 h-[400px] w-[400px] rounded-full bg-accent/5 blur-2xl" />
+        {/* CSS aurora + subtle grid (fast + SEO-safe) */}
+        <div className="aurora" />
+        <div className="bg-grid" />
 
-        <div className="relative mx-auto max-w-5xl px-4 py-28 text-center sm:px-6 sm:py-36 lg:py-44">
-          <p className="mb-4 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1 text-sm font-medium text-accent">
-            🛡️ Trusted by 10 000+ preppers
+        <div className="relative z-10 mx-auto max-w-5xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:py-40">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1 text-sm font-medium text-muted backdrop-blur">
+            <span className="text-accent">●</span>
+            Tech-grade gear picks for real-world emergencies
           </p>
           <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            Be Ready for <span className="text-accent">Anything</span>
+            Preparedness, with <span className="text-accent">signal</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl">
-            Expert-tested survival gear reviews, side-by-side comparisons, and
-            no-BS buying guides. We test it so you don&apos;t have to guess.
+            Clear, modern buying guides for survival gear. Shortlists, specs that matter,
+            and picks you can trust when it counts.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="#categories"
-              className="rounded-xl bg-accent px-8 py-3.5 text-lg font-semibold text-background hover:bg-accent-dark transition-colors"
+              className="rounded-xl bg-accent px-8 py-3.5 text-lg font-semibold text-background transition-colors hover:bg-accent-dark"
             >
-              Explore Gear
+              Browse categories
             </Link>
             <Link
               href="/best/water-filtration"
-              className="rounded-xl border border-border px-8 py-3.5 text-lg font-semibold hover:bg-card transition-colors"
+              className="rounded-xl border border-border bg-card/40 px-8 py-3.5 text-lg font-semibold backdrop-blur transition-colors hover:bg-card"
             >
-              Best of 2026 →
+              See best picks →
             </Link>
           </div>
 
           {/* trust bar */}
-          <div className="mx-auto mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-muted">
-            <span>✅ 28 products reviewed</span>
-            <span>⭐ 4.8 avg rating</span>
-            <span>🔬 Field-tested</span>
-            <span>🎯 Unbiased</span>
+          <div className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-8 text-sm text-muted">
+            <span>✅ Shortlists &amp; comparisons</span>
+            <span>🔬 Field-minded picks</span>
+            <span>🧾 Transparent affiliate disclosure</span>
+            <span>⚡ Fast, SEO-first pages</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Featured Best Guides ── */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <div>
+              <h2 className="text-2xl font-bold lg:text-3xl">Start with the essentials</h2>
+              <p className="mt-2 max-w-2xl text-muted">
+                Our most popular “best of” guides — fast shortlists you can act on.
+              </p>
+            </div>
+            <Link
+              href="#categories"
+              className="rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-card/70"
+            >
+              Or browse all categories →
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                href: "/best/water-filtration",
+                title: "Best Water Filters",
+                desc: "Straws, squeeze filters, and gravity systems — what actually works.",
+                tag: "Water",
+              },
+              {
+                href: "/best/first-aid",
+                title: "Best First Aid Kits",
+                desc: "From everyday carry to trauma-ready kits — smart setups.",
+                tag: "Medical",
+              },
+              {
+                href: "/best/flashlights",
+                title: "Best Flashlights",
+                desc: "Runtime, beam, durability — tactical picks without the hype.",
+                tag: "Light",
+              },
+            ].map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
+              >
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                  <div className="pointer-events-none absolute -top-24 left-1/2 h-56 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+                </div>
+                <div className="relative">
+                  <p className="inline-flex items-center rounded-full border border-border bg-background/40 px-3 py-1 text-xs font-semibold text-muted">
+                    {card.tag}
+                  </p>
+                  <h3 className="mt-4 text-xl font-bold transition-colors group-hover:text-accent">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{card.desc}</p>
+                  <span className="mt-6 inline-flex items-center text-sm font-semibold text-accent">
+                    View guide
+                    <svg
+                      className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
