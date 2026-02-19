@@ -11,7 +11,7 @@ export const ITEMS: Item[] = [
     price: "$37.95",
     rating: 4.5,
     amazonUrl: "https://www.amazon.com/dp/B00B1OSU4W?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Sawyer+Squeeze",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Filters up to 100,000 gallons",
       "Weighs only 3 ounces",
@@ -53,7 +53,7 @@ export const ITEMS: Item[] = [
     price: "$19.95",
     rating: 4.3,
     amazonUrl: "https://www.amazon.com/dp/B006QF3TW4?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=LifeStraw",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Filters up to 4,000 liters",
       "No batteries or electrical power required",
@@ -95,7 +95,7 @@ export const ITEMS: Item[] = [
     price: "$44.95",
     rating: 4.2,
     amazonUrl: "https://www.amazon.com/dp/B075X3MKNX?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Katadyn+BeFree",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Ultra-fast flow rate - 2L per minute",
       "Collapsible for compact storage",
@@ -137,7 +137,7 @@ export const ITEMS: Item[] = [
     price: "$89.95",
     rating: 4.4,
     amazonUrl: "https://www.amazon.com/dp/B078J47K3Z?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=GRAYL+GeoPress",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Purifies 24oz in 15 seconds",
       "Removes viruses, bacteria, chemicals",
@@ -179,7 +179,7 @@ export const ITEMS: Item[] = [
     price: "$69.99",
     rating: 4.1,
     amazonUrl: "https://www.amazon.com/dp/B01M8GK0SS?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Survivor+Filter+PRO",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Triple filtration system",
       "Removes viruses and heavy metals",
@@ -221,7 +221,7 @@ export const ITEMS: Item[] = [
     price: "$24.99",
     rating: 4.3,
     amazonUrl: "https://www.amazon.com/dp/B001QC31G6?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Aquatainer+7gal",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "7-gallon capacity",
       "Built-in spigot for easy pouring",
@@ -265,7 +265,7 @@ export const ITEMS: Item[] = [
     price: "$189.95",
     rating: 4.6,
     amazonUrl: "https://www.amazon.com/dp/B000G7WRBC?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=AMK+Mountaineer",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Covers 4+ people for 14 days",
       "Waterproof DryFlex bags",
@@ -307,7 +307,7 @@ export const ITEMS: Item[] = [
     price: "$149.99",
     rating: 4.7,
     amazonUrl: "https://www.amazon.com/dp/B075QBQZPX?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=MyMedic+MyFAK",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "MOLLE compatible design",
       "Clear organization system",
@@ -349,7 +349,7 @@ export const ITEMS: Item[] = [
     price: "$12.95",
     rating: 4.8,
     amazonUrl: "https://www.amazon.com/dp/B003DPVERM?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Israeli+Bandage",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "One-handed application",
       "Built-in pressure applicator",
@@ -391,7 +391,7 @@ export const ITEMS: Item[] = [
     price: "$17.50",
     rating: 4.5,
     amazonUrl: "https://www.amazon.com/dp/B000VXELKU?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=SAM+Splint",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Lightweight aluminum construction",
       "Infinitely reusable",
@@ -433,7 +433,7 @@ export const ITEMS: Item[] = [
     price: "$42.99",
     rating: 4.6,
     amazonUrl: "https://www.amazon.com/dp/B004CJZERG?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=QuikClot+Gauze",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Stops bleeding in minutes",
       "Safe and effective hemostatic agent",
@@ -477,7 +477,7 @@ export const ITEMS: Item[] = [
     price: "$79.95",
     rating: 4.4,
     amazonUrl: "https://www.amazon.com/dp/B004OVARY6?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Mountain+House+3Day",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "30-year shelf life",
       "Just add water preparation",
@@ -519,7 +519,7 @@ export const ITEMS: Item[] = [
     price: "$199.99",
     rating: 4.2,
     amazonUrl: "https://www.amazon.com/dp/B00IRY9ZGS?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Wise+1Month",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "1,440 calories per day",
       "25-year shelf life",
@@ -561,7 +561,7 @@ export const ITEMS: Item[] = [
     price: "$159.99",
     rating: 4.1,
     amazonUrl: "https://www.amazon.com/dp/B004FYMPB2?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Augason+30Day",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "30-day food supply",
       "Convenient 5-gallon bucket",
@@ -603,7 +603,7 @@ export const ITEMS: Item[] = [
     price: "$34.95",
     rating: 4.5,
     amazonUrl: "https://www.amazon.com/dp/B0002H3S5K?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Vittles+Vault",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Airtight gamma seal lid",
       "Pest and moisture proof",
@@ -645,7 +645,7 @@ export const ITEMS: Item[] = [
     price: "$29.99",
     rating: 4.6,
     amazonUrl: "https://www.amazon.com/dp/B00B5EIQWC?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Mylar+Bags",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "7-mil thick mylar material",
       "Includes 500cc oxygen absorbers",
@@ -687,7 +687,7 @@ export const ITEMS: Item[] = [
     price: "$49.99",
     rating: 4.3,
     amazonUrl: "https://www.amazon.com/dp/B07QR4QF8N?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Freeze+Dried+Veggies",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "20+ year shelf life",
       "Retains full nutrition",
@@ -731,7 +731,7 @@ export const ITEMS: Item[] = [
     price: "$59.99",
     rating: 4.3,
     amazonUrl: "https://www.amazon.com/dp/B018HGFJBE?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Midland+ER310",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Solar, crank, and battery power",
       "NOAA weather alerts",
@@ -773,7 +773,7 @@ export const ITEMS: Item[] = [
     price: "$99.99",
     rating: 4.2,
     amazonUrl: "https://www.amazon.com/dp/B00OOQLGPU?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Eton+FRX5-BT",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Bluetooth smartphone connectivity",
       "Solar panel and hand crank",
@@ -815,7 +815,7 @@ export const ITEMS: Item[] = [
     price: "$49.95",
     rating: 4.1,
     amazonUrl: "https://www.amazon.com/dp/B00176T9OY?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Kaito+KA500",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "5 power source options",
       "Compact and lightweight",
@@ -857,7 +857,7 @@ export const ITEMS: Item[] = [
     price: "$39.95",
     rating: 4.4,
     amazonUrl: "https://www.amazon.com/dp/B00B3MJD3E?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Sangean+MMR-88",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Superior reception quality",
       "Compact pocket size",
@@ -899,7 +899,7 @@ export const ITEMS: Item[] = [
     price: "$29.99",
     rating: 4.5,
     amazonUrl: "https://www.amazon.com/dp/B00176T9T6?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Midland+WR120B",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Automatic weather alerts",
       "SAME programming for local area",
@@ -943,7 +943,7 @@ export const ITEMS: Item[] = [
     price: "$59.00",
     rating: 4.6,
     amazonUrl: "https://www.amazon.com/dp/B003GXF9MW?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Streamlight+ProTac",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "Dual fuel - CR123A or AA battery",
       "350 lumens max output",
@@ -985,7 +985,7 @@ export const ITEMS: Item[] = [
     price: "$89.95",
     rating: 4.7,
     amazonUrl: "https://www.amazon.com/dp/B08L3JZGNZ?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Olight+Warrior",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "1,750 lumens maximum output",
       "Proximity sensor prevents overheating",
@@ -1027,7 +1027,7 @@ export const ITEMS: Item[] = [
     price: "$109.95",
     rating: 4.5,
     amazonUrl: "https://www.amazon.com/dp/B07VQZQN6X?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Fenix+PD36R",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "1,600 lumens with 1,312ft beam",
       "USB-C rechargeable",
@@ -1069,7 +1069,7 @@ export const ITEMS: Item[] = [
     price: "$39.95",
     rating: 4.4,
     amazonUrl: "https://www.amazon.com/dp/B01EWJ7ZB4?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=ThruNite+TN12",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "1,100 lumens neutral white LED",
       "132-hour maximum runtime",
@@ -1111,7 +1111,7 @@ export const ITEMS: Item[] = [
     price: "$34.99",
     rating: 4.3,
     amazonUrl: "https://www.amazon.com/dp/B009TC5XTI?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Maglite+Mini+PRO",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "245 lumens LED output",
       "Adjustable beam focus",
@@ -1153,7 +1153,7 @@ export const ITEMS: Item[] = [
     price: "$54.99",
     rating: 4.2,
     amazonUrl: "https://www.amazon.com/dp/B07Q2KXQZN?tag=preppedia-20",
-    imageUrl: "https://placehold.co/400x400/1a1a1a/22c55e?text=Coast+PX1R",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
     features: [
       "460 lumens with Pure Beam optics",
       "Rechargeable with backup AA battery",
