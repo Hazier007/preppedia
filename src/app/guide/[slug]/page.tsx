@@ -13,122 +13,137 @@ interface GuidePageProps {
   params: Promise<GuidePageParams>;
 }
 
-// Generate static paths for all guides
 export async function generateStaticParams(): Promise<GuidePageParams[]> {
   return GUIDES.map((guide) => ({
     slug: guide.slug,
   }));
 }
 
-// Get guide metadata
 function getGuide(slug: string): Guide | null {
   return GUIDES.find((guide) => guide.slug === slug) || null;
 }
 
-// Read and parse markdown content
 function getGuideContent(slug: string): string {
   try {
     const filePath = path.join(process.cwd(), "content", "guides", `${slug}.md`);
     return fs.readFileSync(filePath, "utf8");
-  } catch (error) {
+  } catch {
     return "";
   }
 }
 
-// Simple markdown to JSX renderer
+function processInlineMarkdown(text: string): React.ReactNode {
+  const parts: React.ReactNode[] = [];
+  let keyCounter = 0;
+
+  const regex = /(\*\*([^*]+)\*\*)|\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+
+    if (match[1]) {
+      parts.push(<strong key={keyCounter++} className="text-foreground font-semibold">{match[2]}</strong>);
+    } else if (match[3]) {
+      parts.push(
+        <Link key={keyCounter++} href={match[4]} className="text-accent hover:text-accent-dark underline font-medium">
+          {match[3]}
+        </Link>
+      );
+    }
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 1 ? <>{parts}</> : parts.length === 1 ? parts[0] : text;
+}
+
 function MarkdownRenderer({ content }: { content: string }) {
   if (!content) return null;
 
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
-  let currentIndex = 0;
+  let listItems: React.ReactNode[] = [];
+  let inList = false;
 
-  while (currentIndex < lines.length) {
-    const line = lines[currentIndex];
-    
-    // H1
+  function flushList(key: number) {
+    if (listItems.length > 0) {
+      elements.push(
+        <ul key={"list-" + key} className="list-disc list-inside space-y-2 mb-6 text-muted">
+          {listItems}
+        </ul>
+      );
+      listItems = [];
+      inList = false;
+    }
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    if (line.match(/^\s*[-*]\s/)) {
+      inList = true;
+      const itemText = line.replace(/^\s*[-*]\s+/, '');
+      listItems.push(
+        <li key={i} className="leading-relaxed">{processInlineMarkdown(itemText)}</li>
+      );
+      continue;
+    }
+
+    if (inList) flushList(i);
+
     if (line.startsWith('# ')) {
       elements.push(
-        <h1 key={currentIndex} className="text-4xl font-bold mb-6 lg:text-5xl">
-          {line.substring(2)}
+        <h1 key={i} className="text-4xl font-bold mb-6 lg:text-5xl">
+          {processInlineMarkdown(line.substring(2))}
         </h1>
       );
-    }
-    // H2
-    else if (line.startsWith('## ')) {
+    } else if (line.startsWith('## ')) {
       elements.push(
-        <h2 key={currentIndex} className="text-2xl font-bold mt-12 mb-6 text-accent lg:text-3xl">
-          {line.substring(3)}
+        <h2 key={i} className="text-2xl font-bold mt-12 mb-6 text-accent lg:text-3xl">
+          {processInlineMarkdown(line.substring(3))}
         </h2>
       );
-    }
-    // H3
-    else if (line.startsWith('### ')) {
-      const title = line.substring(4);
+    } else if (line.startsWith('### ')) {
       elements.push(
-        <h3 key={currentIndex} className="text-xl font-bold mt-8 mb-4 lg:text-2xl">
-          {title}
+        <h3 key={i} className="text-xl font-bold mt-8 mb-4 lg:text-2xl">
+          {processInlineMarkdown(line.substring(4))}
         </h3>
       );
-    }
-    // Paragraph
-    else if (line.trim() && !line.startsWith('#')) {
-      // Process inline markdown (links, bold, etc.)
-      const processedLine = processInlineMarkdown(line);
+    } else if (line.startsWith('#### ')) {
       elements.push(
-        <p key={currentIndex} className="text-muted leading-relaxed mb-4">
-          {processedLine}
+        <h4 key={i} className="text-lg font-bold mt-6 mb-3">
+          {processInlineMarkdown(line.substring(5))}
+        </h4>
+      );
+    } else if (line.match(/^\d+\.\s/)) {
+      const num = line.match(/^(\d+)/)?.[1];
+      const itemText = line.replace(/^\d+\.\s+/, '');
+      elements.push(
+        <div key={i} className="flex gap-3 mb-3 text-muted">
+          <span className="text-accent font-bold">{num}.</span>
+          <span className="leading-relaxed">{processInlineMarkdown(itemText)}</span>
+        </div>
+      );
+    } else if (line.trim() && !line.startsWith('#')) {
+      elements.push(
+        <p key={i} className="text-muted leading-relaxed mb-4">
+          {processInlineMarkdown(line)}
         </p>
       );
     }
-    // Empty lines
-    else if (line.trim() === '') {
-      // Skip empty lines, spacing handled by margins
-    }
-
-    currentIndex++;
   }
+
+  if (inList) flushList(lines.length);
 
   return <>{elements}</>;
-}
-
-// Process inline markdown elements
-function processInlineMarkdown(text: string): React.ReactNode {
-  // Process links [text](/url)
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  const parts: React.ReactNode[] = [];
-  let lastIndex = 0;
-  let match;
-
-  while ((match = linkRegex.exec(text)) !== null) {
-    // Add text before the link
-    if (match.index > lastIndex) {
-      parts.push(text.substring(lastIndex, match.index));
-    }
-
-    // Add the link
-    const linkText = match[1];
-    const linkUrl = match[2];
-    
-    parts.push(
-      <Link 
-        key={match.index}
-        href={linkUrl}
-        className="text-accent hover:text-accent-dark underline font-medium"
-      >
-        {linkText}
-      </Link>
-    );
-
-    lastIndex = match.index + match[0].length;
-  }
-
-  // Add remaining text
-  if (lastIndex < text.length) {
-    parts.push(text.substring(lastIndex));
-  }
-
-  return parts.length > 1 ? <>{parts}</> : text;
 }
 
 export default async function GuidePage({ params }: GuidePageProps) {
@@ -147,24 +162,18 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
   return (
     <div className="min-h-screen">
-      {/* Breadcrumb Navigation */}
       <section className="border-b border-border bg-card/30">
         <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6">
           <nav className="flex items-center space-x-2 text-sm text-muted">
-            <Link href="/" className="hover:text-accent transition-colors">
-              Home
-            </Link>
+            <Link href="/" className="hover:text-accent transition-colors">Home</Link>
             <span>→</span>
-            <Link href="/#buyer-guides" className="hover:text-accent transition-colors">
-              Buyer's Guides
-            </Link>
+            <Link href="/#buyer-guides" className="hover:text-accent transition-colors">Buyer&apos;s Guides</Link>
             <span>→</span>
             <span className="text-foreground">{guide.title}</span>
           </nav>
         </div>
       </section>
 
-      {/* Guide Header */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
           <div className="text-center">
@@ -176,11 +185,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
             <h1 className="text-4xl font-bold mb-4 lg:text-5xl">{guide.title}</h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">{guide.description}</p>
             <div className="mt-6 flex items-center justify-center gap-4 text-sm text-muted">
-              <span>📅 {new Date(guide.publishDate).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}</span>
+              <span>📅 {new Date(guide.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
               <span>✅ Expert-tested</span>
               <span>🎯 Unbiased reviews</span>
             </div>
@@ -188,18 +193,14 @@ export default async function GuidePage({ params }: GuidePageProps) {
         </div>
       </section>
 
-      {/* Guide Content */}
       <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
-        <div className="prose prose-lg max-w-none">
-          <MarkdownRenderer content={content} />
-        </div>
+        <MarkdownRenderer content={content} />
       </article>
 
-      {/* Related Guides */}
       <section className="border-t border-border bg-card/30">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold lg:text-3xl">More Buyer's Guides</h2>
+            <h2 className="text-2xl font-bold lg:text-3xl">More Buyer&apos;s Guides</h2>
             <p className="mt-4 text-muted">Expert-tested gear reviews and recommendations</p>
           </div>
           
@@ -225,15 +226,6 @@ export default async function GuidePage({ params }: GuidePageProps) {
                 </div>
               </Link>
             ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link
-              href="/#buyer-guides"
-              className="inline-block rounded-xl bg-accent px-8 py-3 font-semibold text-background hover:bg-accent-dark transition-colors"
-            >
-              View All Buyer's Guides
-            </Link>
           </div>
         </div>
       </section>
